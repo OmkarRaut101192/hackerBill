@@ -12,19 +12,19 @@ import com.hacker_bills.entity.HackerBill;
 import com.hacker_bills.service.ServiceBill;
 
 @RestController
-@RequestMapping("/hacker/")
+@RequestMapping("/hacker")
 public class ControllerBill {
 
 	@Autowired
 	ServiceBill billService;
 	
-	@GetMapping("bills/{id}")
-	public HackerBill billGetById(@PathVariable("id") Long id) {
+	@GetMapping("/bills/{id}")
+	public HackerBill billGetById(@PathVariable Long id) {
 		return billService.getBillById(id);
 	}
 	
-	@GetMapping("bills/due/{date}")
-	public List<HackerBill> billGetByDueDate(@PathVariable("date") String date) {
+	@GetMapping("/bills/due/{date}")
+	public List<HackerBill> billGetByDueDate(@PathVariable String date) {
 		return billService.dueBillOnDate(date);
 	}
 	

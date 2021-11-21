@@ -23,7 +23,7 @@ public class ServiceBill {
 		return repoBill.getById(id);
 	}
 	
-	public List<HackerBill> dueBillOnDate(String billed_date) {
-		return repoBill.billsDueOnDate(billed_date);
+	public List<HackerBill> dueBillOnDate(String billedDate) {
+		return repoBill.findAllByBilledDate(billedDate);
 	}
 }

@@ -10,6 +10,6 @@ import com.hacker_bills.entity.HackerBill;
 @Component
 public interface BillRepo extends JpaRepository<HackerBill, Long> {
 	
-	List<HackerBill> billsDueOnDate(String billedDate);
+	List<HackerBill> findAllByBilledDate(String billedDate);
 
 }
